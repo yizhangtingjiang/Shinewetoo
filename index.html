@@ -3,164 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>觉醒之人生 · Shinewetoo</title>
+<title>心为途 · 觉醒之人生</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,serif}
-body{background:#f7f6f3;color:#2c2c2c;line-height:1.7}
+*{margin:0;padding:0;box-sizing:border-box;font-family:serif}
+body{background:#f6f5f2;color:#2d2a27;line-height:1.7}
 a{text-decoration:none;color:inherit}
 .container{max-width:1000px;margin:0 auto;padding:0 20px}
-.nav{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.92);backdrop-filter:saturate(180%) blur(10px);z-index:99;border-bottom:1px solid #eee}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
-.logo{font-size:20px;letter-spacing:1px;color:#222;font-weight:500}
-.menu{display:flex;gap:26px;font-size:15px;color:#555}
-.banner{height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;background:linear-gradient(to bottom,#f1efe9,#f7f6f3)}
-.banner-content{max-width:720px}
-.banner h1{font-size:36px;font-weight:500;margin-bottom:24px;line-height:1.4;color:#222}
-.banner p{font-size:17px;color:#666;margin-bottom:32px;line-height:1.9}
-.btn{display:inline-block;padding:12px 32px;border-radius:50px;background:#2d2d2d;color:#fff;font-size:15px;transition:all 0.3s}
-.btn:hover{background:#111}
-.section{padding:80px 0}
-.section-title{text-align:center;font-size:28px;font-weight:500;margin-bottom:50px;color:#222}
-.idea{background:#fff;border-radius:20px;padding:50px 40px;box-shadow:0 8px 30px rgba(0,0,0,0.04)}
-.idea p{font-size:17px;color:#555;line-height:2;text-align:center}
-.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px}
-.product-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.04);transition:transform 0.3s}
-.product-card:hover{transform:translateY(-6px)}
-.product-img{width:100%;height:240px;object-fit:cover;background:#f1efe9}
-.product-info{padding:24px}
-.product-name{font-size:17px;margin-bottom:8px;color:#222}
-.product-desc{font-size:14px;}
-.ai-nav{background:#f1efe9; padding:20px; border-radius:16px; margin-top:10px;}
-.ai-item{background:#fff; padding:16px; border-radius:12px; margin-bottom:12px;}
-.ai-title{font-size:16px; margin:0; font-weight:500;}
-.ai-sub{font-size:13px; color:#666; margin-top:4px;}
-.footer{padding:50px 20px; background:#f8f8f8; text-align:center;}
-.footer p{margin-bottom:8px; font-size:15px; color:#555;}
-
-@media(max-width:768px){
-  .menu{gap:16px;font-size:14px;}
-  .banner h1{font-size:28px;}
-}
+header{position:fixed;width:100%;background:rgba(255,255,255,.95);padding:16px 0;box-shadow:0 2px 10px #0000000a}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:bold}
+.menu{display:flex;gap:24px}
+.hero{height:100vh;background:linear-gradient(#00000066,#00000077),url(https://picsum.photos/id/1039/1920/1080) center/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;padding-top:70px}
+.hero h1{font-size:32px;margin-bottom:16px}
+.hero p{max-width:700px;font-size:15px;opacity:.95;margin-bottom:20px}
+.section{padding:60px 0}
+.title{text-align:center;font-size:24px;margin-bottom:30px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px #00000006}
+.card img{width:100%;height:180px;object-fit:cover}
+.card .info{padding:16px}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p{font-size:13px;color:#666}
+.tools{text-align:center;padding:40px 20px;background:#fff;border-radius:12px}
+.btn{display:inline-block;padding:10px 22px;background:#8c8274;color:#fff;border-radius:30px;font-size:14px;margin-top:10px}
+footer{background:#2d2a27;color:#ddd;text-align:center;padding:30px 20px;font-size:13px}
+@media(max-width:768px){.menu{display:none}.hero h1{font-size:24px}}
 </style>
 </head>
 <body>
-
-<div class="nav">
-<div class="container nav-inner">
+<header>
+<div class="container nav">
 <div class="logo">Shinewetoo · 心为途</div>
 <div class="menu">
-<a href=" ">理念</a >
+<a href=" ">觉醒</a >
 <a href="#products">产品</a >
-<a href="#tools">AI导航</a >
-<a href="#about">关于</a >
+<a href="#tools">工具</a >
 </div>
 </div>
-</div>
-
-<section class="banner">
-<div class="banner-content">
-<h1>觉醒之人生 · 向内行走，向上提频</h1>
-<p>通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维。法门本自在，金刚断烦恼，智慧达彼岸。愿我们Shinewetoo（心为途）产品与您一起共勉。</p >
-<a href="#products" class="btn">探索产品</a >
+</header>
+<section class="hero">
+<div>
+<h1>觉醒之人生</h1>
+<p>眼耳鼻舌身意，色受想行识因缘际遇，历练内心，提频升维。法门本自在，金刚断烦恼，智慧达彼岸。愿我们与您共勉。</p >
+<a href="#products" class="btn">观心好物</a >
 </div>
 </section>
-
-<section class="section" id="idea">
-<div class="container">
-<div class="idea">
-<p>觉醒，是一场与自我的重逢。以眼观色，以耳听声，以鼻闻香，以舌品味，以身触感，以意观心。在因缘际遇中修行，在起心动念里觉察，破除执念，提升频率，升维认知，以金刚之心断一切烦恼，以清净智慧抵达自在彼岸。Shinewetoo 心为途，与你同行。</p >
-</div>
-</div>
+<section id="about" class="section container">
+<h2 class="title">觉醒之路</h2>
+<p style="text-align:center;max-width:700px;margin:0 auto;font-size:15px">以心为途，向内求索。在日常中觉察，在喧嚣中守静，借物修心，借境炼心，让每一刻都成为觉醒的阶梯。</p >
 </section>
-
-<section class="section" id="products">
-<div class="container">
-<h2 class="section-title">心途好物 · 觉醒装备</h2>
+<section id="products" class="section container">
+<h2 class="title">心选好物</h2>
 <div class="products">
-
-<div class="product-card">
-< img src="https://picsum.photos/id/367/800/600" class="product-img">
-<div class="product-info">
-<div class="product-name">600W 户外储能电源</div>
-<div class="product-desc">稳定供电 · 户外随行 · 能量不间断</div>
-</div>
-</div>
-
-<div class="product-card">
-< img src="https://picsum.photos/id/1054/800/600" class="product-img">
-<div class="product-info">
-<div class="product-name">太阳能充电板</div>
-<div class="product-desc">清洁能源 · 高效转换 · 随时随地补能</div>
-</div>
-</div>
-
-<div class="product-card">
-< img src="https://picsum.photos/id/96/800/600" class="product-img">
-<div class="product-info">
-<div class="product-name">高级蓝牙头戴耳机</div>
-<div class="product-desc">降噪沉浸 · 专注冥想 · 聆听内在</div>
-</div>
-</div>
-
-<div class="product-card">
-< img src="https://picsum.photos/id/42/800/600" class="product-img">
-<div class="product-info">
-<div class="product-name">智能香薰机</div>
-<div class="product-desc">静谧氛围 · 香气疗愈 · 安神入定</div>
-</div>
-</div>
-
-<div class="product-card">
-< img src="https://picsum.photos/id/370/800/600" class="product-img">
-<div class="product-info">
-<div class="product-name">天然沉香精油</div>
-<div class="product-desc">清净身心 · 专注提频 · 禅意相伴</div>
-</div>
-</div>
-
-<div class="product-card">
-< img src="https://picsum.photos/id/231/800/600" class="product-img">
-<div class="product-info">
-<div class="product-name">智能语音音箱</div>
-<div class="product-desc">冥想引导 · 白噪音 · 智慧陪伴</div>
-</div>
-</div>
-
-</div>
+<div class="card">< img src="https://picsum.photos/id/180/600/400" alt="储能电源"><div class="info"><h3>600W户外储能电源</h3><p>静谧随行，能量自在</p ></div></div>
+<div class="card">< img src="https://picsum.photos/id/175/600/400" alt="太阳能板"><div class="info"><h3>太阳能充电板</h3><p>自然能量，永续陪伴</p ></div></div>
+<div class="card">< img src="https://picsum.photos/id/1059/600/400" alt="蓝牙耳机"><div class="info"><h3>降噪头戴耳机</h3><p>隔绝纷扰，静听心声</p ></div></div>
+<div class="card">< img src="https://picsum.photos/id/141/600/400" alt="香薰机"><div class="info"><h3>香薰机+沉香精油</h3><p>香气静心，安住当下</p ></div></div>
+<div class="card">< img src="https://picsum.photos/id/214/600/400" alt="智能音箱"><div class="info"><h3>智能音箱</h3><p>智慧相伴，觉醒同行</p ></div></div>
 </div>
 </section>
-
-<section class="section" id="tools">
-<div class="container">
-<h2 class="section-title">AI 工具导航</h2>
-<div class="ai-nav">
-<div class="ai-item">
-<div class="ai-title">AI 冥想引导</div>
-<div class="ai-sub">专注 · 放松 · 入定</div>
-</div>
-<div class="ai-item">
-<div class="ai-title">AI 身心调频</div>
-<div class="ai-sub">情绪 · 能量 · 频率</div>
-</div>
-<div class="ai-item">
-<div class="ai-title">AI 文案创作</div>
-<div class="ai-sub">表达 · 记录 · 觉醒</div>
-</div>
-<div class="ai-item">
-<div class="ai-title">AI 静心陪伴</div>
-<div class="ai-sub">对话 · 觉察 · 成长</div>
-</div>
-</div>
+<section id="tools" class="section container">
+<div class="tools">
+<h2 class="title">AI工具导航</h2>
+<p>辅助觉察、冥想、专注与提升，让科技成为修行助力</p >
+<a href="#" class="btn">进入导航</a >
 </div>
 </section>
-
-<footer class="footer" id="about">
-<div class="container">
-<p>Shinewetoo · 心为途</p >
-<p>法门本自在，金刚断烦恼，智慧达彼岸</p >
-<p>© 觉醒之人生 All Rights Reserved</p >
-</div>
+<footer>
+<p>Shinewetoo 心为途 © 觉醒之人生 | 法门自在 智慧彼岸</p >
 </footer>
-
+<script>
+const menu=document.querySelector('.menu');const toggle=document.createElement('div');toggle.innerHTML='☰';toggle.style.fontSize='22px';toggle.style.cursor='pointer';document.querySelector('.nav').appendChild(toggle);toggle.onclick=()=>{menu.style.display=menu.style.display=='flex'?'none':'flex';menu.style.position='absolute';menu.style.top='60px';menu.style.left='0';menu.style.width='100%';menu.style.background='#fff';menu.style.padding='20px';menu.style.flexDirection='column';menu.style.gap='16px'}
+</script>
 </body>
 </html>
