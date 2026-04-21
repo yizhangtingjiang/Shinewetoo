@@ -1,84 +1,277 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>心为途 Shinewetoo</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans",sans-serif;background:#f7f6f3;color:#2c2c2c;line-height:1.7}
-a{text-decoration:none;color:inherit}
-.container{max-width:1000px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05);z-index:99}
-.nav{display:flex;justify-content:space-between;align-items:center;height:70px}
-.logo{font-size:22px;font-weight:600;letter-spacing:1px;color:#2c2c2c}
-.nav-links{display:flex;gap:28px;font-size:15px}
-.banner{height:80vh;display:flex;align-items:center;background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7)),url(https://picsum.photos/id/1036/1920/1080) center/cover no-repeat;text-align:center}
-.banner h1{font-size:36px;margin-bottom:16px;font-weight:500;max-width:700px;margin-left:auto;margin-right:auto}
-.banner p{font-size:16px;opacity:.85;max-width:600px;margin:0 auto 30px}
-.btn{display:inline-block;padding:12px 32px;background:#2c2c2c;color:#fff;border-radius:6px;font-size:15px;transition:.3s}
-.btn:hover{opacity:.9}
-.section{padding:80px 0}
-.section-title{text-align:center;margin-bottom:50px;font-size:26px;font-weight:500}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 15px rgba(0,0,0,.08)}
-.card img{width:100%;height:220px;object-fit:cover}
-.card-body{padding:20px}
-.card h3{font-size:17px;margin-bottom:8px}
-.card p{font-size:14px;opacity:.75}
-.idea{background:#fff;padding:60px 0;text-align:center}
-.idea p{max-width:700px;margin:0 auto;font-size:16px;opacity:.85}
-footer{background:#2c2c2c;color:#ccc;padding:40px 0;text-align:center;font-size:14px}
-@media(max-width:768px){.banner{height:70vh}.banner h1{font-size:28px}.nav-links{gap:16px}.section{padding:50px 0}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心为途 · Shinewetoo</title>
+    <meta name="description" content="觉醒之人生，通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f7f6f2;
+            color: #2c2c2c;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 导航 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 500;
+            color: #3d3d3d;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #977d5b;
+        }
+
+        /* Banner */
+        .banner {
+            margin-top: 70px;
+            min-height: 70vh;
+            background: linear-gradient(to bottom, #e9e6df, #f7f6f2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .banner h1 {
+            font-size: 36px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 20px;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        .banner p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* 内容区块 */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: #977d5b;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* 产品卡片 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .card-img {
+            height: 180px;
+            background: #e9e6df;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* 理念 */
+        .idea {
+            background: #fff;
+            padding: 60px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        .idea p {
+            font-size: 16px;
+            color: #555;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        /* 底部 */
+        footer {
+            background: #333;
+            color: #aaa;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 18px;
+            }
+            .banner h1 {
+                font-size: 26px;
+            }
+            .section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="container nav">
-<div class="logo">Shinewetoo 心为途</div>
-<div class="nav-links">
-<a href=" ">觉醒</a >
-<a href="#products">产品</a >
-<a href="#tools">导航</a >
-</div>
-</div>
-</header>
-<section class="banner">
-<div class="container">
-<h1>觉醒之人生 向内观照 自在升维</h1>
-<p>眼耳鼻舌身意，色受想行识，因缘际遇，历练内心，提频升维。金刚断烦恼，智慧达彼岸，心为途，与君共勉。</p >
-<a href="#products" class="btn">观照好物</a >
-</div>
-</section>
-<section id="idea" class="idea">
-<div class="container">
-<p>法门本自在，行于当下。以静定修心，以好物相伴，在日常中觉察，在时光里成长。愿每一位同行者，心安、自在、光明。Shinewetoo 心为途，与您一同前行。</p >
-</div>
-</section>
-<section id="products" class="section">
-<h2 class="section-title">相伴好物</h2>
-<div class="container products">
-<div class="card">< img src="https://picsum.photos/id/324/600/400" alt="储能电源"><div class="card-body"><h3>600W户外储能电源</h3><p>便携稳定，户外随行能量供给</p ></div></div>
-<div class="card">< img src="https://picsum.photos/id/175/600/400" alt="太阳能板"><div class="card-body"><h3>太阳能充电板</h3><p>清洁能源，自然续航安心自在</p ></div></div>
-<div class="card">< img src="https://picsum.photos/id/96/600/400" alt="蓝牙耳机"><div class="card-body"><h3>高级蓝牙头戴耳机</h3><p>静享声音，专注冥想与内在</p ></div></div>
-<div class="card">< img src="https://picsum.photos/id/145/600/400" alt="香薰机"><div class="card-body"><h3>静音香薰机</h3><p>温润气息，营造静定氛围</p ></div></div>
-<div class="card">< img src="https://picsum.photos/id/176/600/400" alt="沉香精油"><div class="card-body"><h3>天然沉香精油</h3><p>安神静心，回归平和状态</p ></div></div>
-<div class="card">< img src="https://picsum.photos/id/139/600/400" alt="智能音箱"><div class="card-body"><h3>智能音箱</h3><p>冥想音乐与正念引导陪伴</p ></div></div>
-</div>
-</section>
-<section id="tools" class="section" style="background:#fff">
-<h2 class="section-title">AI工具导航</h2>
-<div class="container" style="text-align:center;opacity:.85;font-size:16px">
-<p>冥想、瑜伽、身心疗愈、AI工具与静心资源，持续收录，助力觉醒与成长。</p >
-</div>
-</section>
-<footer>
-<div class="container">
-<p>Shinewetoo 心为途 觉醒之路，一同前行</p >
-</div>
-</footer>
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){window.scrollTo({top:t.offsetTop-70,behavior:'smooth'})}})})
-</script>
-</body>
-</html>
+
+    <!-- 导航 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Shinewetoo · 心为途</div>
+            <div class="nav-links">
+                <a href=" ">首页</a >
+                <a href="#idea">理念</a >
+                <a href="#product">产品</a >
+                <a href="#tools">工具</a >
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+        <h1>觉醒之人生，提频升维，向内而行</h1>
+        <p>眼耳鼻舌身意，色受想行识，因缘际遇，历练自心</p >
+        <p class="subtitle">法门本自在，金刚断烦恼，智慧达彼岸</p >
+    </section>
+
+    <!-- 理念 -->
+    <section class="section" id="idea">
+        <h2 class="section-title">心途理念</h2>
+        <div class="idea">
+            <p>人生是一场向内的觉醒，通过感官与心念的觉察，在每一次际遇中修心、静心、安心。</p >
+            <p>不向外求，不执于相，以金刚之心断烦恼，以智慧之光行前路，频率自升，维度自高。</p >
+            <p>愿我们 Shinewetoo（心为途）产品与您一起共勉，一路同行，向内扎根，向上生长。</p >
+        </div>
+    </section>
+
+    <!-- 产品 -->
+    <section class="section" id="product">
+        <h2 class="section-title">心途好物</h2>
+        <div class="product-grid">
+            <div class="card">
+                <div class="card-img">产品图片</div>
+                <div class="card-body">
+                    <div class="card-title">600W户外储能电源</div>
+                    <div class="card-desc">户外便携，稳定供电，安心随行</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">产品图片</div>
+                <div class="card-body">
+                    <div class="card-title">太阳能充电板</div>
+                    <div class="card-desc">清洁能源，高效充电，自然随行</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">产品图片</div>
+                <div class="card-body">
+                    <div class="card-title">高级蓝牙头戴耳机</div>
+                    <div c
