@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心为途 · Shinewetoo</title>
-    <meta name="description" content="觉醒之人生，通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维。">
+    <title>觉醒之人生 - Shinewetoo 心为途</title>
     <style>
         * {
             margin: 0;
@@ -13,265 +12,251 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-            background-color: #f7f6f2;
-            color: #2c2c2c;
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #f7f6f2;
+            color: #333;
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
         /* 导航 */
-        nav {
-            position: fixed;
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            z-index: 999;
-            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+            z-index: 99;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
-        .nav-container {
+        .nav {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            padding: 16px 20px;
         }
-
         .logo {
-            font-size: 20px;
-            font-weight: 500;
-            color: #3d3d3d;
-            letter-spacing: 1px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
         .nav-links a {
-            font-size: 15px;
+            margin-left: 24px;
+            text-decoration: none;
             color: #555;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
-
         .nav-links a:hover {
-            color: #977d5b;
+            color: #1abc9c;
         }
 
         /* Banner */
         .banner {
-            margin-top: 70px;
-            min-height: 70vh;
-            background: linear-gradient(to bottom, #e9e6df, #f7f6f2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            background: linear-gradient(to bottom, #eef2f3, #dfe9f3);
             padding: 60px 20px;
+            text-align: center;
         }
-
         .banner h1 {
-            font-size: 36px;
-            font-weight: 400;
-            color: #333;
+            font-size: 32px;
             margin-bottom: 20px;
-            max-width: 800px;
-            line-height: 1.5;
+            color: #2c3e50;
+            font-weight: normal;
         }
-
         .banner p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
             font-size: 16px;
-            color: #666;
-            max-width: 700px;
-            margin-bottom: 10px;
         }
 
-        .subtitle {
-            font-size: 14px;
-            color: #888;
-            margin-top: 10px;
-        }
-
-        /* 内容区块 */
-        .section {
+        /* 容器 */
+        .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 40px 20px;
         }
 
-        .section-title {
+        /* 产品 */
+        .products-title {
             text-align: center;
-            font-size: 24px;
-            font-weight: 400;
-            color: #333;
-            margin-bottom: 50px;
-            position: relative;
+            font-size: 26px;
+            margin-bottom: 40px;
+            color: #2c3e50;
         }
-
-        .section-title::after {
-            content: '';
-            width: 40px;
-            height: 1px;
-            background: #977d5b;
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* 产品卡片 */
-        .product-grid {
+        .product-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 30px;
         }
-
-        .card {
+        .product-card {
             background: #fff;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
-
-        .card:hover {
+        .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
-
-        .card-img {
-            height: 180px;
-            background: #e9e6df;
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background: #e9ecef;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
+            color: #888;
             font-size: 14px;
         }
-
-        .card-body {
+        .product-info {
             padding: 20px;
         }
-
-        .card-title {
-            font-size: 16px;
-            color: #333;
+        .product-name {
+            font-size: 18px;
             margin-bottom: 8px;
-            font-weight: 500;
+            color: #2c3e50;
         }
-
-        .card-desc {
+        .product-param {
             font-size: 14px;
-            color: #777;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 18px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .shinewetoo {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #1abc9c;
         }
 
-        /* 理念 */
-        .idea {
+        /* 滚动经文 */
+        .scroll-box {
             background: #fff;
-            padding: 60px 30px;
             border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-            text-align: center;
+            padding: 20px;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-
-        .idea p {
-            font-size: 16px;
+        .scroll-title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .scroll-content {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            right: 20px;
+            animation: scroll 25s linear infinite;
             color: #555;
             line-height: 2;
+            font-size: 15px;
+        }
+        @keyframes scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+
+        /* 文章链接 */
+        .article-box {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .article-box h3 {
             margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .article-link {
+            display: block;
+            padding: 10px 0;
+            color: #1abc9c;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        .article-link:hover {
+            padding-left: 5px;
         }
 
         /* 底部 */
         footer {
-            background: #333;
-            color: #aaa;
-            padding: 40px 20px;
+            background: #2c3e50;
+            color: #fff;
             text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        .footer-copy {
             font-size: 14px;
+            color: #ccc;
         }
 
-        .footer-text {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 18px;
+        /* 响应 */
+        @media (max-width:768px) {
+            .nav {
+                flex-direction: column;
+                gap:10px;
+            }
+            .nav-links a {
+                margin: 0 10px;
             }
             .banner h1 {
-                font-size: 26px;
-            }
-            .section {
-                padding: 50px 20px;
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 导航 -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Shinewetoo · 心为途</div>
-            <div class="nav-links">
-                <a href=" ">首页</a >
-                <a href="#idea">理念</a >
-                <a href="#product">产品</a >
-                <a href="#tools">工具</a >
+<header>
+    <div class="nav">
+        <div class="logo">Shinewetoo · 心为途</div>
+        <div class="nav-links">
+            <a href=" ">首页</a >
+            <a href="#products">产品</a >
+            <a href="#sutra">经典</a >
+            <a href="#article">文章</a >
+        </div>
+    </div>
+</header>
+
+<section class="banner" id="home">
+    <h1>觉醒之人生 · 提频升维</h1>
+    <p>通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维，法门本自在，金刚断烦恼，智慧达彼岸。愿我们Shinewetoo(心为途)产品与您一起共勉。</p >
+</section>
+
+<div class="container">
+    <h2 class="products-title" id="products">产品展示</h2>
+    <div class="product-list">
+        <div class="product-card">
+            <div class="product-img">图片位置：D盘-网站-照片文件夹</div>
+            <div class="product-info">
+                <div class="product-name">户外储能移动电源</div>
+                <div class="product-param">功率：300瓦 | 输出PD100瓦</div>
+                <div class="product-price">¥500</div>
+                <div class="shinewetoo">shinewetoo</div>
             </div>
         </div>
-    </nav>
-
-    <!-- Banner -->
-    <section class="banner" id="home">
-        <h1>觉醒之人生，提频升维，向内而行</h1>
-        <p>眼耳鼻舌身意，色受想行识，因缘际遇，历练自心</p >
-        <p class="subtitle">法门本自在，金刚断烦恼，智慧达彼岸</p >
-    </section>
-
-    <!-- 理念 -->
-    <section class="section" id="idea">
-        <h2 class="section-title">心途理念</h2>
-        <div class="idea">
-            <p>人生是一场向内的觉醒，通过感官与心念的觉察，在每一次际遇中修心、静心、安心。</p >
-            <p>不向外求，不执于相，以金刚之心断烦恼，以智慧之光行前路，频率自升，维度自高。</p >
-            <p>愿我们 Shinewetoo（心为途）产品与您一起共勉，一路同行，向内扎根，向上生长。</p >
+        <div class="product-card">
+            <div class="product-img">图片位置：D盘-网站-照片文件夹</div>
+            <div class="product-info">
+                <div class="product-name">无线蓝牙头戴耳机</div>
+                <div class="product-param">主动降噪功能</div>
+                <div class="product-price">¥400</div>
+                <div class="shinewetoo">shinewetoo</div>
+            </div>
         </div>
-    </section>
-
-    <!-- 产品 -->
-    <section class="section" id="product">
-        <h2 class="section-title">心途好物</h2>
-        <div class="product-grid">
-            <div class="card">
-                <div class="card-img">产品图片</div>
-                <div class="card-body">
-                    <div class="card-title">600W户外储能电源</div>
-                    <div class="card-desc">户外便携，稳定供电，安心随行</div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">产品图片</div>
-                <div class="card-body">
-                    <div class="card-title">太阳能充电板</div>
-                    <div class="card-desc">清洁能源，高效充电，自然随行</div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">产品图片</div>
-                <div class="card-body">
-                    <div class="card-title">高级蓝牙头戴耳机</div>
-                    <div c
+        <div class="product-card">
+            <div class="product-img">图片位置：D盘-网站-照片文件夹</div>
+            <div class="product-info">
+                <div class="product-name">智能音箱</div>
+             
