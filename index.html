@@ -3,260 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>觉醒之人生 - Shinewetoo 心为途</title>
+    <title>心为途Shinewetoo - 觉醒之人生</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
         }
-
         body {
-            font-family: "Microsoft YaHei", sans-serif;
-            background: #f7f6f2;
+            background-color: #f5f0e6;
             color: #333;
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
-
-        /* 导航 */
-        header {
-            background: rgba(255, 255, 255, 0.9);
+        /* 导航栏 */
+        nav {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
             position: sticky;
             top: 0;
-            z-index: 99;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .nav {
-            max-width: 1100px;
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px;
         }
         .logo {
-            font-size: 22px;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #2c3e50;
+            color: #6b4f4f;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
         .nav-links a {
-            margin-left: 24px;
             text-decoration: none;
-            color: #555;
-            transition: 0.3s;
+            color: #6b4f4f;
+            transition: color 0.3s;
         }
         .nav-links a:hover {
-            color: #1abc9c;
+            color: #b8860b;
         }
-
         /* Banner */
         .banner {
-            background: linear-gradient(to bottom, #eef2f3, #dfe9f3);
-            padding: 60px 20px;
+            background: linear-gradient(rgba(107, 79, 79, 0.7), rgba(107, 79, 79, 0.7)), url("");
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
+            padding: 0 5%;
         }
         .banner h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-weight: normal;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
         .banner p {
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto;
-            color: #555;
-            font-size: 16px;
         }
-
-        /* 容器 */
+        /* 通用容器 */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 4rem 5%;
         }
-
-        /* 产品 */
-        .products-title {
+        section {
+            margin-bottom: 4rem;
+        }
+        section h2 {
+            color: #6b4f4f;
             text-align: center;
-            font-size: 26px;
-            margin-bottom: 40px;
-            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2rem;
         }
+        /* 关于我们 */
+        .about-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            line-height: 2;
+            color: #555;
+        }
+        /* 产品展示 */
         .product-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         .product-card {
-            background: #fff;
+            background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
         .product-card:hover {
             transform: translateY(-5px);
         }
         .product-img {
-            width: 100%;
             height: 200px;
-            background: #e9ecef;
+            background: #e8e0d0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-size: 14px;
+            color: #6b4f4f;
+            font-size: 0.9rem;
+            padding: 1rem;
+            text-align: center;
         }
         .product-info {
-            padding: 20px;
+            padding: 1.5rem;
         }
         .product-name {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
         }
         .product-param {
-            font-size: 14px;
             color: #666;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
         .product-price {
-            font-size: 18px;
-            color: #e74c3c;
+            color: #b8860b;
             font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
         .shinewetoo {
-            margin-top: 10px;
-            font-size: 12px;
-            color: #1abc9c;
+            color: #6b4f4f;
+            font-size: 0.8rem;
         }
-
-        /* 滚动经文 */
-        .scroll-box {
-            background: #fff;
+        /* 经文滚动板块 */
+        .scripture-box {
+            background: white;
             border-radius: 10px;
-            padding: 20px;
-            height: 220px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 300px;
             overflow: hidden;
             position: relative;
-            margin: 40px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .scroll-title {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #2c3e50;
-        }
-        .scroll-content {
-            position: absolute;
-            top: 50px;
-            left: 20px;
-            right: 20px;
-            animation: scroll 25s linear infinite;
+        .scripture-content {
+            padding: 2rem;
             color: #555;
             line-height: 2;
-            font-size: 15px;
+            animation: scroll 60s linear infinite;
         }
         @keyframes scroll {
             0% { transform: translateY(0); }
             100% { transform: translateY(-100%); }
         }
-
-        /* 文章链接 */
-        .article-box {
-            background: #fff;
+        /* 新闻/文章板块 */
+        .news-box {
+            background: white;
             border-radius: 10px;
-            padding: 25px;
-            margin: 40px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2rem;
         }
-        .article-box h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        .article-link {
-            display: block;
-            padding: 10px 0;
-            color: #1abc9c;
-            text-decoration: none;
+        .news-item {
+            padding: 1rem 0;
             border-bottom: 1px solid #eee;
         }
-        .article-link:hover {
-            padding-left: 5px;
+        .news-item:last-child {
+            border-bottom: none;
         }
-
-        /* 底部 */
+        .news-item a {
+            color: #6b4f4f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .news-item a:hover {
+            color: #b8860b;
+        }
+        /* 页脚 */
         footer {
-            background: #2c3e50;
-            color: #fff;
+            background: #6b4f4f;
+            color: white;
+            padding: 3rem 5%;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
         }
-        .footer-copy {
-            font-size: 14px;
-            color: #ccc;
+        .footer-info {
+            margin-bottom: 1rem;
         }
-
-        /* 响应 */
-        @media (max-width:768px) {
-            .nav {
-                flex-direction: column;
-                gap:10px;
-            }
-            .nav-links a {
-                margin: 0 10px;
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
             .banner h1 {
-                font-size: 24px;
+                font-size: 2rem;
+            }
+            .banner p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="nav">
-        <div class="logo">Shinewetoo · 心为途</div>
-        <div class="nav-links">
-            <a href=" ">首页</a >
-            <a href="#products">产品</a >
-            <a href="#sutra">经典</a >
-            <a href="#article">文章</a >
-        </div>
-    </div>
-</header>
-
-<section class="banner" id="home">
-    <h1>觉醒之人生 · 提频升维</h1>
-    <p>通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维，法门本自在，金刚断烦恼，智慧达彼岸。愿我们Shinewetoo(心为途)产品与您一起共勉。</p >
-</section>
-
-<div class="container">
-    <h2 class="products-title" id="products">产品展示</h2>
-    <div class="product-list">
-        <div class="product-card">
-            <div class="product-img">图片位置：D盘-网站-照片文件夹</div>
-            <div class="product-info">
-                <div class="product-name">户外储能移动电源</div>
-                <div class="product-param">功率：300瓦 | 输出PD100瓦</div>
-                <div class="product-price">¥500</div>
-                <div class="shinewetoo">shinewetoo</div>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">心为途Shinewetoo</div>
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#about">关于我们</a>
+                <a href="#products">产品展示</a>
+                <a href="#scripture">经文</a>
+                <a href="#news">文章更新</a>
+                <a href="#contact">联系我们</a>
             </div>
         </div>
-        <div class="product-card">
-            <div class="product-img">图片位置：D盘-网站-照片文件夹</div>
-            <div class="product-info">
-                <div class="product-name">无线蓝牙头戴耳机</div>
-                <div class="product-param">主动降噪功能</div>
-                <div class="product-price">¥400</div>
-                <div class="shinewetoo">shinewetoo</div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+        <div>
+            <h1>觉醒之人生</h1>
+            <p>通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维，法门本自在，金刚断烦恼，智慧达彼岸。愿我们Shinewetoo(心为途)产品与您一起共勉。</p>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about">
+        <div class="container">
+            <h2>关于我们</h2>
+            <div class="about-text">
+                <p>我们是深圳市芯微特科技有限公司，以“心为途Shinewetoo”为品牌，致力于打造与觉醒、疗愈、提升内在频率相契合的科技产品。愿以实用的产品，陪伴您在生活中修行，在科技中寻找内心的平静与力量。</p>
             </div>
         </div>
-        <div class="product-card">
-            <div class="product-img">图片位置：D盘-网站-照片文件夹</div>
-            <div class="product-info">
-                <div class="product-name">智能音箱</div>
-             
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products">
+        <div class="container">
+            <h2>产品展示</h2>
+            <div class="product-list">
+                <!-- 产品1 -->
+                <div class="product-card">
+                    <div class="product-img">图片位置：D盘-网站-照片文件夹/储能电源.jpg</div>
+                    <div class="product-info">
+                        <div class="product-name">户外储能移动电源</div>
+                        <div class="product-param">功率：300瓦 | 输出PD100瓦</div>
+                        <div class="product-price">¥500</div>
+                        <div class="shinewetoo">shinewetoo</div>
+                    </div>
+                </div>
+                <!-- 产品2 -->
+                <div class="product-card">
+                    <div class="product-img">图片位置：D盘-网站-照片文件夹/蓝牙耳机.jpg</div>
+                    <div class="product-info">
+                        <div class="product-name">无线蓝牙头戴耳机</div>
+                        <div class="product-param">主动降噪功能</div>
+                        <div class="product-price">¥400</div>
+                        <div class="shinewetoo">shinewetoo</div>
+                    </div>
+                </div>
+                <!-- 产品3 -->
+                <div class="product-card">
+                    <div class="product-img">图片位置：D盘-网站-照片文件夹/智能音箱.jpg</div>
+                    <div class="product-info">
+                        <div class="product-name">智能音箱</div>
+                        <div class="product-param">（参数待补充）</div>
+                        <div class="product-price">（价格待补充）</div>
+                        <div class="shinewetoo">shinewetoo</div>
+                    </div>
+                </div>
+                <!-- 产品4 -->
+                <div class="product-card">
+                    <div class="product-img">图片位置：D盘-网站-照片文件夹/天然沉香.jpg</div>
+                    <div class="product-info">
+                        <div class="product-name">天然沉香</div>
+                        <div class="product-param">（参数待补充）</div>
+                        <div class="product-price">（价格待补充）</div>
+                        <div class="shinewetoo">shinewetoo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经文滚动板块 -->
+    <section id="scripture">
+        <div class="container">
+            <h2>心经与金刚经</h2>
+            <div class="scripture-box">
+                <div class="scripture-content">
+                    <h3>《般若波罗蜜多心经》</h3>
+                    <p>观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。舍利子，是诸法空相，不生不灭，不垢不净，不增不减。是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法，无眼界，乃至无意识界。无无明，亦无无明尽，乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。以无所得故，菩提萨埵，依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐怖，远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨婆诃。</p>
+                    <br>
+                    <h3>《金刚经·节选》</h3>
+                    <p>一切有为法，如梦幻泡影，如露亦如电，应作如是观。</p>
+                    <p>凡所有相，皆是虚妄。若见诸相非相，即见如来。</p>
+                    <p>应无所住而生其心。</p>
+                    <p>过去心不可得，现在心不可得，未来心不可得。</p>
+                    <p>若以色见我，以音声求我，是人行邪道，不能见如来。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章/新闻板块 -->
+    <section id="news">
+        <div class="container">
+            <h2>文章更新</h2>
+            <div class="news-box">
+                <div class="news-item">
+                    <a href="#">【修行随笔】在日常中保持觉知，是最好的冥想</a>
+                    <p style="font-size:0.8rem;color:#999;margin-top:0.5rem;">发布时间：2026-04-01</p>
+                </div>
+                <div class="news-item">
+                    <a href="#">【产品上新】心为途天然沉香，伴你每一次静心时刻</a>
+                    <p style="font-size:0.8rem;color:#999;margin-top:0.5rem;">发布时间：2026-03-15</p>
+                </div>
+                <div class="news-item">
+                    <a href="#">【禅意生活】如何用科技产品打造你的专属冥想空间</a>
+                    <p style="font-size:0.8rem;color:#999;margin-top:0.5rem;">发布时间：2026-03-01</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚/联系我们 -->
+    <footer id="contact">
+        <div class="footer-info">
+            <h3>深圳市芯微特科技有限公司</h3>
+            <p>地址：深圳市龙岗区</p>
+            <p>联系人：江先生</p>
+            <p>手机/微信：13715211903</p>
+        </div>
+        <p>&copy; 2026 心为途Shinewetoo 版权所有</p>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
