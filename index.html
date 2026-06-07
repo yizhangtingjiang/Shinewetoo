@@ -144,7 +144,7 @@
             line-height: 2;
         }
 
-        /* 产品展示 - 已修改高度自适应 */
+        /* 产品展示 - 彻底自适应布局 */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -159,7 +159,7 @@
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
-            min-height: 500px; /* 确保足够高度不被截断 */
+            /* 移除固定高度，完全靠内容撑开 */
         }
 
         .product-card:hover {
@@ -168,14 +168,15 @@
 
         .product-img {
             width: 100%;
-            aspect-ratio: 4 / 3; /* 自适应宽高比，图片不变形 */
-            object-fit: cover;
+            height: auto; /* 图片高度自适应 */
             display: block;
+            object-fit: contain; /* 保证图片完整显示 */
+            background-color: #f8f8f8;
         }
 
         .product-info {
             padding: 1.5rem;
-            flex: 1; /* 让文字区域自动撑开剩余高度 */
+            flex: none; /* 文字区域不强行撑开 */
         }
 
         .product-info h3 {
@@ -325,10 +326,6 @@
 
             .section-title {
                 font-size: 1.6rem;
-            }
-
-            .product-card {
-                min-height: auto; /* 移动端自动高度 */
             }
         }
     </style>
