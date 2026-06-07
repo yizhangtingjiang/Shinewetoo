@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心为途 Shinewetoo - 觉醒之人生</title>
+    <title>心为途 Shinewetoo - 冥想瑜伽 心灵修行</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft Yahei", SimSun, serif;
+            font-family: "Microsoft YaHei", sans-serif;
         }
 
         :root {
-            --main-color: #6B8E7B;
-            --light-color: #F5F3EE;
-            --dark-color: #3A4A42;
-            --text-color: #444;
-            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --main-color: #6B8E23;
+            --light-color: #F5F5DC;
+            --dark-color: #333;
+            --gray-color: #777;
+            --white: #fff;
         }
 
         body {
             background-color: var(--light-color);
-            color: var(--text-color);
-            line-height: 1.8;
+            color: var(--dark-color);
+            line-height: 1.6;
         }
 
         /* 导航栏 */
         header {
+            background-color: var(--main-color);
             position: sticky;
             top: 0;
-            background: var(--dark-color);
             z-index: 999;
-            box-shadow: var(--shadow);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .nav-container {
@@ -41,19 +41,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1rem;
         }
 
         .logo {
-            color: var(--light-color);
+            color: var(--white);
             font-size: 1.5rem;
             font-weight: bold;
         }
 
         .logo span {
             font-size: 0.9rem;
-            opacity: 0.8;
-            margin-left: 0.5rem;
+            opacity: 0.9;
+            margin-left: 8px;
         }
 
         .nav-menu {
@@ -62,32 +62,34 @@
         }
 
         .nav-menu a {
-            color: var(--light-color);
+            color: var(--white);
             text-decoration: none;
             font-size: 1rem;
-            transition: color 0.3s;
+            transition: 0.3s;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
         }
 
         .nav-menu a:hover {
-            color: #c9b89c;
+            border-bottom: 2px solid var(--white);
         }
 
         .menu-btn {
             display: none;
-            color: #fff;
-            font-size: 1.5rem;
+            color: var(--white);
+            font-size: 1.8rem;
             cursor: pointer;
         }
 
         /* Banner */
         .banner {
+            background: linear-gradient(rgba(107, 142, 35, 0.7), rgba(107, 142, 35, 0.7)), url('https://picsum.photos/id/1044/1920/800') center/cover no-repeat;
             height: 60vh;
-            background: linear-gradient(rgba(107, 142, 123, 0.7), rgba(58, 74, 66, 0.8)), url('https://raw.githubusercontent.com/yizhangtingjiang/Shinewetoo/refs/heads/main/images/HWDY.png') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: var(--white);
             text-align: center;
             padding: 2rem;
         }
@@ -100,69 +102,70 @@
         .banner p {
             max-width: 800px;
             font-size: 1.1rem;
-            opacity: 0.95;
+            line-height: 2;
         }
 
         /* 通用容器 */
         .container {
             max-width: 1200px;
             margin: 4rem auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         .section-title {
             text-align: center;
             font-size: 2rem;
-            color: var(--dark-color);
+            color: var(--main-color);
             margin-bottom: 3rem;
             position: relative;
         }
 
         .section-title::after {
-            content: "";
+            content: '';
             display: block;
             width: 80px;
-            height: 2px;
+            height: 3px;
             background: var(--main-color);
             margin: 0.8rem auto;
+            border-radius: 2px;
         }
 
         /* 关于我们 */
         .about-box {
-            background: #fff;
+            background: var(--white);
             padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .about-box p {
             font-size: 1rem;
-            text-indent: 2em;
-            margin-bottom: 1rem;
+            color: var(--gray-color);
+            line-height: 2;
         }
 
         /* 产品展示 */
-        .product-list {
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .product-card {
-            background: #fff;
-            border-radius: 8px;
+            background: var(--white);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
 
         .product-img {
             width: 100%;
-            height: 260px;
+            height: 220px;
             object-fit: cover;
             display: block;
         }
@@ -172,69 +175,91 @@
         }
 
         .product-info h3 {
-            color: var(--dark-color);
+            color: var(--main-color);
             margin-bottom: 0.8rem;
         }
 
-        .product-info ul {
-            list-style: disc inside;
+        .product-info p {
+            color: var(--gray-color);
             font-size: 0.9rem;
-            color: #555;
+            line-height: 1.8;
         }
 
-        /* 经文滚动区域 */
-        .script-box {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+        /* 经文滚动板块 */
+        .scripture-box {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .script-scroll {
-            height: 300px;
+        .scroll-wrap {
+            height: 240px;
             overflow: hidden;
             position: relative;
         }
 
-        .script-content {
-            line-height: 2.2;
-            font-size: 1rem;
-            color: #333;
-            text-align: center;
-            white-space: pre-line;
-            animation: scrollText 80s linear infinite;
+        .scroll-content {
+            position: absolute;
+            width: 100%;
+            animation: scrollText 60s linear infinite;
         }
 
         @keyframes scrollText {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
+            0% { top: 0; }
+            100% { top: -100%; }
+        }
+
+        .scroll-content p {
+            font-size: 1rem;
+            color: var(--dark-color);
+            line-height: 2;
+            text-indent: 2em;
         }
 
         /* 文章分享 */
         .article-box {
-            background: #fff;
+            background: var(--white);
+            border-radius: 12px;
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .article-tip {
-            color: #888;
-            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .article-item {
-            padding: 1rem;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            margin-bottom: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
         }
 
-        /* 底部信息 */
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-item h4 {
+            color: var(--main-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-item p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+        }
+
+        .add-article {
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.2rem;
+            background: var(--main-color);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        /* 底部 */
         footer {
-            background: var(--dark-color);
-            color: var(--light-color);
-            padding: 3rem 2rem;
+            background: var(--main-color);
+            color: var(--white);
+            padding: 3rem 1rem;
             margin-top: 4rem;
         }
 
@@ -246,31 +271,40 @@
             gap: 2rem;
         }
 
-        .footer-col h4 {
+        .footer-col h3 {
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .footer-col p {
-            font-size: 0.9rem;
+            line-height: 1.8;
             opacity: 0.9;
         }
 
-        /* 响应式适配 */
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* 响应式 */
         @media (max-width: 768px) {
             .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--dark-color);
+                position: fixed;
+                top: 60px;
+                left: -100%;
                 flex-direction: column;
-                padding: 1rem 2rem;
-                display: none;
+                background: var(--main-color);
+                width: 100%;
+                height: calc(100vh - 60px);
+                text-align: center;
+                transition: left 0.3s;
+                padding-top: 2rem;
             }
 
             .nav-menu.active {
-                display: flex;
+                left: 0;
             }
 
             .menu-btn {
@@ -295,13 +329,13 @@
     <!-- 导航栏 -->
     <header>
         <div class="nav-container">
-            <div class="logo">心为途 <span>Shinewetoo</span></div>
+            <div class="logo">心为途 Shinewetoo <span>深圳市芯微特科技有限公司</span></div>
             <div class="menu-btn" id="menuBtn">☰</div>
             <nav class="nav-menu" id="navMenu">
                 <a href="#home">首页</a>
                 <a href="#about">关于我们</a>
                 <a href="#product">产品展示</a>
-                <a href="#script">经文诵读</a>
+                <a href="#scripture">经文阅览</a>
                 <a href="#article">文章分享</a>
                 <a href="#contact">联系我们</a>
             </nav>
@@ -311,7 +345,7 @@
     <!-- Banner -->
     <section class="banner" id="home">
         <h1>觉醒之人生</h1>
-        <p>通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维，法门本自在，金刚断烦恼，智慧达彼岸。</p>
+        <p>通过眼耳鼻舌身意，色受想行识因缘际遇，不断历练自己内心，不断进步提频升维。法门本自在，金刚断烦恼，智慧达彼岸。</p>
     </section>
 
     <!-- 关于我们 -->
@@ -325,97 +359,95 @@
     <!-- 产品展示 -->
     <section class="container" id="product">
         <h2 class="section-title">产品展示</h2>
-        <div class="product-list">
-            <!-- 产品1 储能电源 -->
+        <div class="products-grid">
             <div class="product-card">
                 <img src="https://raw.githubusercontent.com/yizhangtingjiang/Shinewetoo/refs/heads/main/images/HWDY.png" alt="便携式储能电源" class="product-img">
                 <div class="product-info">
                     <h3>便携式储能电源 XWT1601</h3>
-                    <p>品牌：心为途（Shinewetoo）</p>
-                    <ul>
-                        <li>产品容量：45Ah / 576WH</li>
-                        <li>电芯类型：磷酸铁锂 32140 / 15000mAh / 4串3并</li>
-                        <li>DC/PV充电输入：12V-28V，电流3A-6A，功率120W，转换效率≥85%</li>
-                        <li>多重输入保护，支持太阳能板、车充充电</li>
-                        <li>输出：USB、QC3.0、TYPE-C PD3.0、DC、AC 600W(100V-240V)</li>
-                    </ul>
+                    <p><strong>品牌：</strong>心为途（Shinewetoo）<br>
+                    产品容量：45Ah / 576WH<br>
+                    电芯类型：磷酸铁锂 32140 / 15000mAh / 4串3并<br>
+                    DC/PV充电输入:12V-28V，充电电流3A-6A，功率120W，转化效率≥85%<br>
+                    多重保护，支持太阳能板/车充充电<br>
+                    多接口输出：USB、QC3.0、TYPE-C PD3.0、DC、AC 600W(100V-240V)</p>
                 </div>
             </div>
 
-            <!-- 产品2 蓝牙耳机 -->
             <div class="product-card">
                 <img src="https://raw.githubusercontent.com/yizhangtingjiang/Shinewetoo/refs/heads/main/images/EJ.jpg" alt="无线蓝牙头戴耳机" class="product-img">
                 <div class="product-info">
                     <h3>无线蓝牙头戴耳机 XWT2001</h3>
-                    <p>品牌：心为途（Shinewetoo）</p>
-                    <ul>
-                        <li>5麦混合主动降噪，深度降噪</li>
-                        <li>铝合金工艺，可旋转折叠设计</li>
-                        <li>仿蛋白旋转皮耳罩，舒适亲肤</li>
-                        <li>40mm大尺寸单元，碳纤维圆顶喇叭</li>
-                        <li>超长续航，Type-C快充，蓝牙5.4</li>
-                        <li>环境自适应调节，配备专用收纳盒</li>
-                    </ul>
+                    <p><strong>品牌：</strong>心为途（Shinewetoo）<br>
+                    5麦混合主动降噪，蝉噪幽林体验<br>
+                    铝合金工艺，可旋转折叠收纳<br>
+                    仿蛋白旋转皮耳罩，舒适亲肤<br>
+                    40mm大尺寸驱动单元，音质出众<br>
+                    蓝牙5.4、超长续航、Type-C快充<br>
+                    配备专业收纳盒</p>
                 </div>
             </div>
 
-            <!-- 产品3 电子杆蜡 -->
             <div class="product-card">
                 <img src="https://raw.githubusercontent.com/yizhangtingjiang/Shinewetoo/refs/heads/main/images/GL.jpg" alt="电子杆蜡" class="product-img">
                 <div class="product-info">
                     <h3>电子杆蜡 XWT3001</h3>
-                    <p>品牌：心为途（Shinewetoo）</p>
-                    <ul>
-                        <li>上下双灯照明</li>
-                        <li>配备无线遥控器</li>
-                        <li>钻石镶嵌工艺，玻璃烛台</li>
-                        <li>防倾倒硅胶套，使用安全</li>
-                        <li>两支套装，精美彩盒包装</li>
-                    </ul>
+                    <p><strong>品牌：</strong>心为途（Shinewetoo）<br>
+                    上下灯照明，配备遥控器<br>
+                    钻石镶嵌设计，玻璃烛台<br>
+                    防倾倒硅胶套，安全稳固<br>
+                    2支套装，精美彩盒包装</p>
                 </div>
             </div>
 
-            <!-- 产品4 电子熏香炉 -->
             <div class="product-card">
                 <img src="https://raw.githubusercontent.com/yizhangtingjiang/Shinewetoo/refs/heads/main/images/XXL.png" alt="电子熏香炉" class="product-img">
                 <div class="product-info">
                     <h3>电子熏香炉 XWT4001</h3>
-                    <p>品牌：心为途（Shinewetoo）</p>
-                    <ul>
-                        <li>快速发热，升温迅速</li>
-                        <li>多档位工作模式可选</li>
-                        <li>大容量腔体，使用持久</li>
-                        <li>运行静音，静谧相伴</li>
-                        <li>多重安全防护，使用放心</li>
-                    </ul>
+                    <p><strong>品牌：</strong>心为途（Shinewetoo）<br>
+                    快速发热，多档模式调节<br>
+                    大容量腔体，使用持久<br>
+                    静音运行，使用安心<br>
+                    安全防护设计，居家适用</p>
                 </div>
             </div>
 
-            <!-- 产品5 电热水杯 -->
             <div class="product-card">
                 <img src="https://raw.githubusercontent.com/yizhangtingjiang/Shinewetoo/refs/heads/main/images/DRB.png" alt="电热水杯" class="product-img">
                 <div class="product-info">
                     <h3>电热水杯 XWT5001</h3>
-                    <p>品牌：心为途（Shinewetoo）</p>
-                    <ul>
-                        <li>SUS304食品级材质，无异味</li>
-                        <li>4档智能调温：45℃/55℃/85℃/100℃</li>
-                        <li>NTC精准控温探头</li>
-                        <li>杯盖泄压设计，防溢出</li>
-                        <li>便携机身，出行必备</li>
-                        <li>缺水自动断电，防干烧保护</li>
-                    </ul>
+                    <p><strong>品牌：</strong>心为途（Shinewetoo）<br>
+                    SUS304食品级材质，无异味<br>
+                    4档智能调温：45℃/55℃/85℃/100℃<br>
+                    精准NTC感温探头，控温精准<br>
+                    透气膜泄压，防倾倒溢出<br>
+                    便携设计，缺水自动断电保护</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 经文滚动区域 -->
-    <section class="container" id="script">
-        <h2 class="section-title">心经 & 金刚经 诵读</h2>
-        <div class="script-box">
-            <div class="script-scroll">
-                <div class="script-content" id="scriptText">
+    <!-- 经文滚动板块 -->
+    <section class="container" id="scripture">
+        <h2 class="section-title">心经 & 金刚经 阅览</h2>
+        <div class="scripture-box">
+            <div class="scroll-wrap">
+                <div class="scroll-content">
+                    <p>《般若波罗蜜多心经》<br>
+观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。舍利子，是诸法空相，不生不灭，不垢不净，不增不减。是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法，无眼界，乃至无意识界，无无明，亦无无明尽，乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。以无所得故。菩提萨埵，依般若波罗蜜多故，心无挂碍。无挂碍故，无有恐怖，远离一切颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨婆诃。<br><br>
+《金刚经·节选》<br>
+如是我闻。一时佛在舍卫国祇树给孤独园，与大比丘众千二百五十人俱。尔时，世尊食时，著衣持钵，入舍卫大城乞食。于其城中，次第乞已，还至本处。饭食讫，收衣钵，洗足已，敷座而坐。<br>
+时，长老须菩提出在大众中，即从座起，偏袒右肩，右膝着地，合掌恭敬而白佛言：希有世尊，如来善护念诸菩萨，善付嘱诸菩萨。世尊，善男子、善女人，发阿耨多罗三藐三菩提心，应云何住？云何降伏其心？<br>
+佛言：善哉，善哉。须菩提，如汝所说，如来善护念诸菩萨，善付嘱诸菩萨。汝今谛听，当为汝说。善男子、善女人，发阿耨多罗三藐三菩提心，应如是住，如是降伏其心。<br>
+须菩提言：唯然，世尊，愿乐欲闻。<br>
+佛告须菩提：诸菩萨摩诃萨，应如是降伏其心：所有一切众生之类，若卵生、若胎生、若湿生、若化生，若有色、若无色，若有想、若无想、若非有想非无想，我皆令入无余涅槃而灭度之。如是灭度无量无数无边众生，实无众生得灭度者。何以故？须菩提，若菩萨有我相、人相、众生相、寿者相，即非菩萨。</p>
+                    <p>《般若波罗蜜多心经》<br>
+观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。舍利子，是诸法空相，不生不灭，不垢不净，不增不减。是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法，无眼界，乃至无意识界，无无明，亦无无明尽，乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。以无所得故。菩提萨埵，依般若波罗蜜多故，心无挂碍。无挂碍故，无有恐怖，远离一切颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨婆诃。<br><br>
+《金刚经·节选》<br>
+如是我闻。一时佛在舍卫国祇树给孤独园，与大比丘众千二百五十人俱。尔时，世尊食时，著衣持钵，入舍卫大城乞食。于其城中，次第乞已，还至本处。饭食讫，收衣钵，洗足已，敷座而坐。<br>
+时，长老须菩提出在大众中，即从座起，偏袒右肩，右膝着地，合掌恭敬而白佛言：希有世尊，如来善护念诸菩萨，善付嘱诸菩萨。世尊，善男子、善女人，发阿耨多罗三藐三菩提心，应云何住？云何降伏其心？<br>
+佛言：善哉，善哉。须菩提，如汝所说，如来善护念诸菩萨，善付嘱诸菩萨。汝今谛听，当为汝说。善男子、善女人，发阿耨多罗三藐三菩提心，应如是住，如是降伏其心。<br>
+须菩提言：唯然，世尊，愿乐欲闻。<br>
+佛告须菩提：诸菩萨摩诃萨，应如是降伏其心：所有一切众生之类，若卵生、若胎生、若湿生、若化生，若有色、若无色，若有想、若无想、若非有想非无想，我皆令入无余涅槃而灭度之。如是灭度无量无数无边众生，实无众生得灭度者。何以故？须菩提，若菩萨有我相、人相、众生相、寿者相，即非菩萨。</p>
                 </div>
             </div>
         </div>
@@ -425,10 +457,17 @@
     <section class="container" id="article">
         <h2 class="section-title">文章分享</h2>
         <div class="article-box">
-            <p class="article-tip">此处可分享微信公众号优质文章，持续更新心灵感悟、冥想修行、生活哲思类内容。</p>
-            <div class="article-item">
-                <p>敬请期待更多精彩文章，与君同修，共悟本心。</p>
+            <div class="article-list" id="articleList">
+                <div class="article-item">
+                    <h4>修行于心，自在生活</h4>
+                    <p>分享冥想与瑜伽日常修行心得，在浮躁的生活中守住内心宁静，提升自我维度，遇见更好的自己。</p>
+                </div>
+                <div class="article-item">
+                    <h4>器物相伴，静心修己</h4>
+                    <p>结合生活器物，营造静心修行氛围，让心灵修行融入日常点滴，时时观照，步步觉醒。</p>
+                </div>
             </div>
+            <button class="add-article" onclick="addArticle()">新增公众号文章</button>
         </div>
     </section>
 
@@ -436,21 +475,20 @@
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-col">
-                <h4>公司信息</h4>
-                <p>深圳市芯微特科技有限公司</p>
-                <p>品牌：心为途 Shinewetoo</p>
+                <h3>公司信息</h3>
+                <p>深圳市芯微特科技有限公司<br>品牌：心为途 Shinewetoo</p>
             </div>
             <div class="footer-col">
-                <h4>联系地址</h4>
-                <p>深圳市龙岗区龙城街道尚景社区龙域大道85号</p>
-                <p>万科时代广场3栋A座2317</p>
+                <h3>联系地址</h3>
+                <p>深圳市龙岗区龙城街道尚景社区龙域大道85号万科时代广场3栋A座2317</p>
             </div>
             <div class="footer-col">
-                <h4>联系方式</h4>
-                <p>联系人：江先生</p>
-                <p>手机(同微信)：13715211903</p>
-                <p>邮箱：JIEHONG.JIANG@163.COM</p>
+                <h3>联系方式</h3>
+                <p>联系人：江先生<br>手机(同微信)：13715211903<br>邮箱：JIEHONG.JIANG@163.COM</p>
             </div>
+        </div>
+        <div class="copyright">
+            © 2025 深圳市芯微特科技有限公司 心为途 Shinewetoo 版权所有
         </div>
     </footer>
 
@@ -458,51 +496,46 @@
         // 移动端菜单切换
         const menuBtn = document.getElementById('menuBtn');
         const navMenu = document.getElementById('navMenu');
-        menuBtn.addEventListener('click', function(){
+        menuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
 
-        // 心经 + 金刚经 文本
-        const scriptText = document.getElementById('scriptText');
-        const scripture = `
-般若波罗蜜多心经
+        // 点击导航链接关闭移动端菜单
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 768){
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
 
-观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。
-舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。
-舍利子，是诸法空相，不生不灭，不垢不净，不增不减。
-是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法，无眼界，乃至无意识界。
-无无明，亦无无明尽，乃至无老死，亦无老死尽。
-无苦集灭道，无智亦无得。以无所得故，菩提萨埵，依般若波罗蜜多故，心无挂碍。
-无挂碍故，无有恐怖，远离一切颠倒梦想，究竟涅槃。
-三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提。
-故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。
-故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨婆诃。
+        // 新增文章功能
+        function addArticle(){
+            const title = prompt("请输入文章标题：");
+            const content = prompt("请输入文章简介/内容：");
+            if(title && content){
+                const articleList = document.getElementById('articleList');
+                const item = document.createElement('div');
+                item.className = 'article-item';
+                item.innerHTML = `<h4>${title}</h4><p>${content}</p>`;
+                articleList.prepend(item);
+            }
+        }
 
-————————————————————
-
-金刚经 节选
-
-如是我闻。一时佛在舍卫国祇树给孤独园，与大比丘众千二百五十人俱。
-尔时，世尊食时，著衣持钵，入舍卫大城乞食。于其城中，次第乞已，还至本处。
-饭食讫，收衣钵，洗足已，敷座而坐。
-时长老须菩提，在大众中，即从座起，偏袒右肩，右膝着地，合掌恭敬而白佛言：
-希有世尊，如来善护念诸菩萨，善付嘱诸菩萨。
-世尊，善男子、善女人，发阿耨多罗三藐三菩提心，应云何住？云何降伏其心？
-佛言：善哉，善哉。须菩提，如汝所说，如来善护念诸菩萨，善付嘱诸菩萨。
-汝今谛听，当为汝说。善男子、善女人，发阿耨多罗三藐三菩提心，应如是住，如是降伏其心。
-须菩提白佛言：世尊，愿乐欲闻。
-
-佛告须菩提：诸菩萨摩诃萨，应如是降伏其心：
-所有一切众生之类，若卵生、若胎生、若湿生、若化生，若有色、若无色，若有想、若无想、若非有想非无想，
-我皆令入无余涅槃而灭度之。如是灭度无量无数无边众生，实无众生得灭度者。
-何以故？须菩提，若菩萨有我相、人相、众生相、寿者相，即非菩萨。
-
-凡所有相，皆是虚妄。若见诸相非相，即见如来。
-一切有为法，如梦幻泡影，如露亦如电，应作如是观。
-
-        `;
-        // 复制文本实现无缝滚动
-        scriptText.innerText = scripture + "\n\n" + scripture;
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetEle = document.querySelector(targetId);
+                if(targetEle){
+                    targetEle.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
