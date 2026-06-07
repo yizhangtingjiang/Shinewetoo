@@ -515,31 +515,31 @@
             });
         });
 
-        // 升级后的：新增公众号文章功能
-function addArticle(){
-    // 1. 让用户输入标题、链接、简介
-    const title = prompt("请输入文章标题：");
-    if (!title) return; // 如果用户取消，就不继续了
-
-    const link = prompt("请输入公众号文章链接（复制的 mp.weixin.qq.com 链接）：");
-    if (!link) return;
-
-    const desc = prompt("请输入文章简介（选填，可直接点确定）：") || "点击标题即可跳转到公众号阅读全文";
-
-    // 2. 生成新的文章卡片
-    const articleList = document.getElementById('articleList');
-    const item = document.createElement('div');
-    item.className = 'article-item';
-
-    // 3. 卡片里带跳转链接，点击会在新窗口打开公众号文章
-    item.innerHTML = `
-        <h4><a href=" " target="_blank" style="color: #6B8E23; text-decoration: none;">${title}</a ></h4>
-        <p>${desc}</p >
-    `;
-
-    // 4. 把新卡片加到列表最前面
-    articleList.prepend(item);
-}
+       // 升级后的：新增公众号文章功能
+ function addArticle(){
+     // 1. 让用户依次输入标题、链接、简介
+     const title = prompt("请输入文章标题：");
+     if (!title) return; // 用户点了取消就退出
+     const link = prompt("请输入公众号文章链接（格式：mp.weixin.qq.com/s/...）：");
+     if (!link) return;
+     const desc = prompt("请输入文章简介（选填，可直接点确定）：") || "点击标题跳转到公众号阅读全文";
+     // 2. 生成「跳转链接」卡片（核心：用<a>标签+target="_blank"）
+     const articleList = document.getElementById('articleList');
+     const item = document.createElement('div');
+     item.className = 'article-item';
+     item.innerHTML = `
+         <h4>
+             <a href=" " 
+                target="_blank" 
+                style="color: #6B8E23; text-decoration: none;">
+                 ${title}
+             </a >
+         </h4>
+         <p>${desc}</p >
+     `;
+     // 3. 把新卡片加到列表最前面
+     articleList.prepend(item);
+ }
 
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
